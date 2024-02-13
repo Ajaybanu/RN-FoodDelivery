@@ -8,21 +8,22 @@ import {
   TextInput,
   Image,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as Location from "expo-location";
 import * as LocationGeocoding from "expo-location";
-import { SimpleLineIcons } from "@expo/vector-icons";
-import { AntDesign, Entypo } from "@expo/vector-icons";
-
+import { Octicons, Ionicons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import Carousel from "../../components/Carousel";
 import Categories from "../../components/Categories";
 import Hotel from "../../components/Hotel";
-const Index = () => {
+
+
+const index = () => {
   const [locationServicesEnabled, setLocationServicesEnabled] = useState(false);
   const [displayCurrentAddress, setDisplayCurrentAddress] = useState(
     "fetching your location ..."
   );
-  const [data, setData] = useState([]);
+  const [data,setData] = useState([]);
 
   useEffect(() => {
     CheckIfLocationEnabled();
@@ -60,7 +61,6 @@ const Index = () => {
       accuracy: Location.Accuracy.High,
     });
     console.log(location);
-
     let { coords } = await Location.getCurrentPositionAsync();
     if (coords) {
       const { latitude, longitude } = coords;
@@ -78,19 +78,18 @@ const Index = () => {
       const streetAddress = address[0].name;
       for (let item of response) {
         let address = `${item.name}, ${item?.postalCode}, ${item?.city}`;
+
         setDisplayCurrentAddress(address);
       }
     }
   };
-
   console.log("my address", displayCurrentAddress);
-
   const recommended = [
     {
       id: 0,
       name: "Nandhana Palace",
       image:
-        "https://img.freepik.com/free-photo/exploding-burger-with-vegetables-melted-cheese-black-background-generative-ai_157027-1734.jpg",
+        "https://b.zmtcdn.com/data/pictures/chains/3/50713/81d0735ce259a6bf800e16bb54cb9e5e.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
       time: "35 - 45",
       type: "Andhra",
     },
@@ -98,7 +97,7 @@ const Index = () => {
       id: 0,
       name: "GFC Biriyani",
       image:
-        "https://cdn.pixabay.com/photo/2017/11/25/17/17/sandwich-2977251_640.jpg",
+        "https://b.zmtcdn.com/data/pictures/0/20844770/f9582144619b80d30566f497a02e2c8d.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
       time: "10 - 35",
       type: "North Indian",
     },
@@ -106,7 +105,7 @@ const Index = () => {
       id: 0,
       name: "Happiness Dhaba",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrcFHU-IUkmyI5-drUFbyZsiRlb0Q6Zb-kmQ&usqp=CAU",
+        "https://b.zmtcdn.com/data/reviews_photos/2f1/c66cf9c2c68f652db16f2c0a6188a2f1_1659295848.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
       time: "20 - 25",
       type: "North Indian",
     },
@@ -114,7 +113,8 @@ const Index = () => {
     {
       id: 0,
       name: "Happiness Dhaba",
-      image: "https://images.alphacoders.com/862/862638.jpg",
+      image:
+        "https://b.zmtcdn.com/data/reviews_photos/2f1/c66cf9c2c68f652db16f2c0a6188a2f1_1659295848.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
       time: "20 - 25",
       type: "North Indian",
     },
@@ -122,12 +122,11 @@ const Index = () => {
       id: 0,
       name: "Happiness Dhaba",
       image:
-        "https://wallpapers.com/images/featured/delicious-food-pictures-i5wjpvjqrk3qroy0.jpg",
+        "https://b.zmtcdn.com/data/reviews_photos/2f1/c66cf9c2c68f652db16f2c0a6188a2f1_1659295848.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
       time: "20 - 25",
       type: "North Indian",
     },
   ];
-
   const items = [
     {
       id: "0",
@@ -492,6 +491,28 @@ const Index = () => {
     },
   ];
 
+  
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const { data, error } = await supabase.from("hotels").select("*");
+        console.log("Data:", data);
+        if (error) {
+          console.error("Error fetching data:", error);
+        } else {
+          setData(data);
+        }
+      } catch (error) {
+        console.error("Error in fetchData:", error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+
+  console.log("data",data)
+
   return (
     <ScrollView style={{ flex: 1, backgroundColor: "#f8f8f8" }}>
       <View
@@ -499,14 +520,12 @@ const Index = () => {
           flexDirection: "row",
           alignItems: "center",
           gap: 12,
-          paddding: 10,
+          padding: 10,
         }}
       >
-        <SimpleLineIcons name="location-pin" size={24} color="black" />
+        <Octicons name="location" size={24} color="#E52850" />
         <View style={{ flex: 1 }}>
-          <Text style={{ fontSize: 15, fontWeight: "500" }}>
-            Delivery To ....
-          </Text>
+          <Text style={{ fontSize: 15, fontWeight: "500" }}>Deliver To</Text>
           <Text style={{ color: "gray", fontSize: 16, marginTop: 3 }}>
             {displayCurrentAddress}
           </Text>
@@ -521,7 +540,7 @@ const Index = () => {
             alignItems: "center",
           }}
         >
-          <Text>press</Text>
+          <Text>S</Text>
         </Pressable>
       </View>
 
@@ -540,8 +559,9 @@ const Index = () => {
         }}
       >
         <TextInput placeholder="Search for food, hotels" />
-        <AntDesign name="search1" size={24} color="#E52850" />
+        <AntDesign name="search1" size={24} color="#E52B50" />
       </View>
+
       <Carousel />
 
       <Categories />
@@ -586,19 +606,20 @@ const Index = () => {
               <View
                 style={{ flexDirection: "row", alignItems: "center", gap: 3 }}
               >
-                <Entypo name="back-in-time" size={24} color="green" />
+                <Ionicons name="ios-time" size={24} color="green" />
                 <Text>{item?.time} mins</Text>
               </View>
             </View>
           </View>
         ))}
       </ScrollView>
+
       <Text
         style={{
           textAlign: "center",
           marginTop: 7,
           letterSpacing: 4,
-          marginBottom: 4,
+          marginBottom: 5,
           color: "gray",
         }}
       >
@@ -638,7 +659,7 @@ const Index = () => {
       <Text style={{textAlign:"center",marginTop:7,letterSpacing:4,marginBottom:5,color:"gray"}}>ALL RESTAURANTS</Text>
 
       <View style={{marginHorizontal:8}}>
-            {hotels?.map((item,index) => (
+            {data?.map((item,index) => (
                 <Hotel key={index} item={item} menu={item?.menu}/>
             ))}
       </View>
@@ -646,6 +667,6 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default index;
 
 const styles = StyleSheet.create({});
