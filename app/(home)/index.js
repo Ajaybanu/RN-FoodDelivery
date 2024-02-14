@@ -132,25 +132,25 @@ const index = () => {
       id: "0",
       name: "Offers",
       description: "Upto 50% off",
-      image: "https://cdn-icons-png.flaticon.com/128/9356/9356378.png",
+      image: "https://b.zmtcdn.com/data/reviews_photos/2f1/c66cf9c2c68f652db16f2c0a6188a2f1_1659295848.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
     },
     {
       id: "1",
       name: "Legends",
       description: "Across India",
-      image: "https://cdn-icons-png.flaticon.com/128/8302/8302686.png",
+      image: "https://b.zmtcdn.com/data/reviews_photos/2f1/c66cf9c2c68f652db16f2c0a6188a2f1_1659295848.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
     },
     {
       id: "2",
       name: "Gourmet",
       description: "Selections",
-      image: "https://cdn-icons-png.flaticon.com/128/1065/1065715.png",
+      image: "https://b.zmtcdn.com/data/reviews_photos/2f1/c66cf9c2c68f652db16f2c0a6188a2f1_1659295848.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
     },
     {
       id: "3",
       name: "Healthy",
       description: "Curated dishes",
-      image: "https://cdn-icons-png.flaticon.com/128/415/415744.png",
+      image: "https://b.zmtcdn.com/data/reviews_photos/2f1/c66cf9c2c68f652db16f2c0a6188a2f1_1659295848.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
     },
   ];
   const hotels = [
@@ -659,7 +659,7 @@ const index = () => {
       <Text style={{textAlign:"center",marginTop:7,letterSpacing:4,marginBottom:5,color:"gray"}}>ALL RESTAURANTS</Text>
 
       <View style={{marginHorizontal:8}}>
-            {data?.map((item,index) => (
+            {hotels?.map((item,index) => (
                 <Hotel key={index} item={item} menu={item?.menu}/>
             ))}
       </View>
