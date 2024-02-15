@@ -11,12 +11,12 @@ import {
 import React, { useState, useEffect } from "react";
 import * as Location from "expo-location";
 import * as LocationGeocoding from "expo-location";
-import { Octicons, Ionicons } from "@expo/vector-icons";
+import { Octicons, Entypo} from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import Carousel from "../../components/Carousel";
 import Categories from "../../components/Categories";
 import Hotel from "../../components/Hotel";
-
+import { supabase } from "../../supabase";
 
 const index = () => {
   const [locationServicesEnabled, setLocationServicesEnabled] = useState(false);
@@ -132,25 +132,25 @@ const index = () => {
       id: "0",
       name: "Offers",
       description: "Upto 50% off",
-      image: "https://b.zmtcdn.com/data/reviews_photos/2f1/c66cf9c2c68f652db16f2c0a6188a2f1_1659295848.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      image: "https://cdn-icons-png.flaticon.com/128/9356/9356378.png",
     },
     {
       id: "1",
       name: "Legends",
       description: "Across India",
-      image: "https://b.zmtcdn.com/data/reviews_photos/2f1/c66cf9c2c68f652db16f2c0a6188a2f1_1659295848.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      image: "https://cdn-icons-png.flaticon.com/128/8302/8302686.png",
     },
     {
       id: "2",
       name: "Gourmet",
       description: "Selections",
-      image: "https://b.zmtcdn.com/data/reviews_photos/2f1/c66cf9c2c68f652db16f2c0a6188a2f1_1659295848.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      image: "https://cdn-icons-png.flaticon.com/128/1065/1065715.png",
     },
     {
       id: "3",
       name: "Healthy",
       description: "Curated dishes",
-      image: "https://b.zmtcdn.com/data/reviews_photos/2f1/c66cf9c2c68f652db16f2c0a6188a2f1_1659295848.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      image: "https://cdn-icons-png.flaticon.com/128/415/415744.png",
     },
   ];
   const hotels = [
@@ -511,7 +511,7 @@ const index = () => {
   }, []);
 
 
-  console.log("data",data)
+  console.log("dataoooooooooooooooooooooooooooooo",data)
 
   return (
     <ScrollView style={{ flex: 1, backgroundColor: "#f8f8f8" }}>
@@ -606,7 +606,7 @@ const index = () => {
               <View
                 style={{ flexDirection: "row", alignItems: "center", gap: 3 }}
               >
-                <Ionicons name="ios-time" size={24} color="green" />
+                <Entypo name="back-in-time" size={24} color="black" />
                 <Text>{item?.time} mins</Text>
               </View>
             </View>
@@ -659,7 +659,7 @@ const index = () => {
       <Text style={{textAlign:"center",marginTop:7,letterSpacing:4,marginBottom:5,color:"gray"}}>ALL RESTAURANTS</Text>
 
       <View style={{marginHorizontal:8}}>
-            {hotels?.map((item,index) => (
+            {data?.map((item,index) => (
                 <Hotel key={index} item={item} menu={item?.menu}/>
             ))}
       </View>

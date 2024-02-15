@@ -18,5 +18,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-//https://npuqmkbnszukuptmbcfh.supabase.co
-//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wdXFta2Juc3p1a3VwdG1iY2ZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc5MTIyMzIsImV4cCI6MjAyMzQ4ODIzMn0.V-6339H_7DiZYQM1qyJ1EQZIQNmrjsWkH7_-6_Hcwzs
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1bHpia2prdnVlc2d4enN3bnFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDgwMDUwOTQsImV4cCI6MjAyMzU4MTA5NH0.l58aXVvvXq2QjAnE43pbGbVUTftA8-vsAlWlF09Rus8
+//

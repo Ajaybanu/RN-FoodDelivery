@@ -1,6 +1,6 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
-import {  AntDesign } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 import { useDispatch } from "react-redux";
 import { addToCart, decrementQuantity, incrementQuantity, removeFromCart } from "../redux/CartReducer";
 
@@ -32,11 +32,14 @@ const MenuItem = ({ item }) => {
             }}
           >
             {[0, 0, 0, 0, 0].map((en, i) => (
-
-           <AntDesign  
+              <FontAwesome
+                // key={`${food.id}-${i}`}
+                key={i}
                 style={{ paddingHorizontal: 3 }}
-                name={i < Math.floor(item.rating) ? "star" : "star-o"} />
-                
+                name={i < Math.floor(item.rating) ? "star" : "star-o"}
+                size={15}
+                color="#FFD700"
+              />
             ))}
           </Text>
           <Text

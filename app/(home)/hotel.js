@@ -8,11 +8,11 @@ import {
   Image,
 } from "react-native";
 import React, { useRef, useState } from "react";
-import { useLocalSearchParams,useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import FoodItem from "../../components/FoodItem"
+import FoodItem from "../../components/FoodItem";
 import { useSelector } from "react-redux";
 import Modal from "react-native-modal";
 
@@ -35,7 +35,7 @@ const hotel = () => {
           rating: 4.1,
           ratings: 43,
           image:
-            "https://c4.wallpaperflare.com/wallpaper/869/719/717/cuisine-food-india-indian-wallpaper-preview.jpg",
+            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/druwjzmfmz7qvepq3bkr",
           veg: true,
           bestSeller: false,
           quantity: 1,
@@ -49,7 +49,7 @@ const hotel = () => {
           rating: 4.3,
           ratings: 34,
           image:
-            "https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_1280.jpg",
+            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/ry3c3f518z10t4olu4l7",
           veg: false,
           bestSeller: true,
           quantity: 1,
@@ -63,7 +63,7 @@ const hotel = () => {
           rating: 4.5,
           ratings: 56,
           image:
-            "https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_1280.jpg",
+            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/fsitbray4gq1kxcndqqx",
           veg: true,
           bestSeller: false,
           quantity: 1,
@@ -77,7 +77,7 @@ const hotel = () => {
           rating: 3.8,
           ratings: 22,
           image:
-            "https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_1280.jpg",
+            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/byonwwb8mzxyqluxlqpq",
           veg: true,
           bestSeller: true,
           quantity: 1,
@@ -91,7 +91,7 @@ const hotel = () => {
           rating: 4.5,
           ratings: 45,
           image:
-            "https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_1280.jpg",
+            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/x0jegvlf4h7wrgaaqdqi",
           veg: false,
           bestSeller: true,
           quantity: 1,
@@ -111,7 +111,7 @@ const hotel = () => {
           rating: 4.3,
           ratings: 34,
           image:
-            "https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_1280.jpg",
+            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/akmx533z73jjbq8avy6v",
           veg: false,
           bestSeller: true,
         },
@@ -124,7 +124,7 @@ const hotel = () => {
           rating: 4.3,
           ratings: 52,
           image:
-            "https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_1280.jpg",
+            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/lv6jl9qdscekjmwkxm9l",
           veg: false,
           bestSeller: false,
         },
@@ -137,7 +137,7 @@ const hotel = () => {
           rating: 4.6,
           ratings: 56,
           image:
-            "https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_1280.jpg",
+            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/pycpbzawueci1dvhmkr3",
           veg: true,
           bestSeller: true,
         },
@@ -150,15 +150,13 @@ const hotel = () => {
           rating: 4.5,
           ratings: 48,
           image:
-            "https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_1280.jpg",
+            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/xukq8swrwct8usmg4cjv",
           veg: true,
           bestSeller: false,
         },
       ],
     },
   ];
-  console.log("Menu:", menu); 
-
   const scrollViewRef = useRef(null);
   const scrollAnim = useRef(new Animated.Value(0)).current;
   const ITEM_HEIGHT = 650;
@@ -172,8 +170,7 @@ const hotel = () => {
     scrollViewRef.current.scrollTo({ y: yOffset, animated: true });
   };
   const [modalVisible, setModalVisible] = useState(false);
-  const recievedMenu = params.menu ? JSON.parse(params.menu) : [];
-
+  const recievedMenu = JSON.parse(params?.menu)
   return (
     <>
       <ScrollView ref={scrollViewRef} style={{ backgroundColor: "white" }}>
@@ -276,7 +273,7 @@ const hotel = () => {
           </View>
         </View>
 
-        {menu?.map((item, index) => (
+        {recievedMenu?.map((item, index) => (
           <FoodItem key={index} item={item} />
         ))}
       </ScrollView>

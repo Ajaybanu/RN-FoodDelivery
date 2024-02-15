@@ -9,8 +9,10 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.21.0",
     "@reduxjs/toolkit": "^2.2.0",
     "@supabase/supabase-js": "^2.39.6",
+    "deprecated-react-native-prop-types": "^5.0.0",
     "expo": "~50.0.5",
     "expo-constants": "~15.4.5",
     "expo-linking": "~6.2.2",
