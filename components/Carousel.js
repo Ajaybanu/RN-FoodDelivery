@@ -5,8 +5,10 @@ import { SliderBox } from "react-native-image-slider-box";
 const Carousel = () => {
   const images = [
    
-    "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg",
-    "https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?cs=srgb&dl=pexels-marvin-ozz-2474661.jpg&fm=jpg"
+    "https://w0.peakpx.com/wallpaper/101/95/HD-wallpaper-burgers-fast-food-delicious-food-sandwiches-harmful-food.jpg",
+    "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?cs=srgb&dl=pexels-chan-walrus-958545.jpg&fm=jpg",
+    "https://images.picxy.com/cache/2021/3/26/531ad3964d17d19d88e219a803e8ea80.jpg",
+    "https://wallpapers.com/images/featured/indian-food-x2tv62mgy6kq4or3.jpg"
    
   ];
   return (

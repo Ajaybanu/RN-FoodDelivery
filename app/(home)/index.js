@@ -87,44 +87,44 @@ const index = () => {
   const recommended = [
     {
       id: 0,
-      name: "Nandhana Palace",
+      name: "Kuzhimandhi",
       image:
-        "https://b.zmtcdn.com/data/pictures/chains/3/50713/81d0735ce259a6bf800e16bb54cb9e5e.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+        "https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/wga6rcoaeey0dionhfjh",
       time: "35 - 45",
-      type: "Andhra",
+      type: "Arabian",
     },
     {
       id: 0,
-      name: "GFC Biriyani",
+      name: "Burger",
       image:
-        "https://b.zmtcdn.com/data/pictures/0/20844770/f9582144619b80d30566f497a02e2c8d.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
+       "https://png.pngtree.com/png-clipart/20230927/original/pngtree-burger-food-transparent-format-fresh-tasty-chicken-meat-cheeseburger-vector-png-image_13158968.png",
       time: "10 - 35",
-      type: "North Indian",
+      type: "South-indian",
     },
     {
       id: 0,
-      name: "Happiness Dhaba",
-      image:
-        "https://b.zmtcdn.com/data/reviews_photos/2f1/c66cf9c2c68f652db16f2c0a6188a2f1_1659295848.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      name: "Kozhikoden biriyani",
+      image: "https://content.jdmagicbox.com/comp/palakkad/a7/9999px491.x491.171226101939.f4a7/catalogue/biriyani-centre-and-fast-food-ottapalam-palakkad-fast-food-0eaqh.jpg?clr=#5b380b",
+     
       time: "20 - 25",
-      type: "North Indian",
+      type: "Kerala",
     },
 
     {
       id: 0,
-      name: "Happiness Dhaba",
+      name: "K F C ",
       image:
-        "https://b.zmtcdn.com/data/reviews_photos/2f1/c66cf9c2c68f652db16f2c0a6188a2f1_1659295848.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+        "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xs/D-K012.jpg?ver=39.7",
       time: "20 - 25",
-      type: "North Indian",
+      type: "South Indian",
     },
     {
       id: 0,
-      name: "Happiness Dhaba",
+      name: "Pizza",
       image:
-        "https://b.zmtcdn.com/data/reviews_photos/2f1/c66cf9c2c68f652db16f2c0a6188a2f1_1659295848.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+        "https://www.southernliving.com/thmb/3x3cJaiOvQ8-3YxtMQX0vvh1hQw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/2652401_QFSSL_SupremePizza_00072-d910a935ba7d448e8c7545a963ed7101.jpg",
       time: "20 - 25",
-      type: "North Indian",
+      type: " Indian",
     },
   ];
   const items = [

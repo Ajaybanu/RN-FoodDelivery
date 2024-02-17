@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import React, { useRef, useState } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
+import { Entypo,Ionicons,AntDesign  } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import FoodItem from "../../components/FoodItem";
@@ -182,13 +182,10 @@ const hotel = () => {
             justifyContent: "space-between",
           }}
         >
-          <Ionicons
-            onPress={() => router.back()}
-            style={{ padding: 5 }}
-            name="arrow-back"
-            size={24}
-            color="black"
-          />
+          <AntDesign onPress={() => router.back()}
+            style={{ padding: 5 }} name="back" size={24} color="black" />
+       
+         
           <View
             style={{
               flexDirection: "row",
@@ -226,7 +223,7 @@ const hotel = () => {
             }}
           >
             {" "}
-            North Indian • Fast Food • 160 for one
+            South Indian • Fast Food • 160 for one
           </Text>
           <View
             style={{
@@ -252,7 +249,7 @@ const hotel = () => {
               >
                 {params?.aggregate_rating}
               </Text>
-              <Ionicons name="ios-star" size={15} color="white" />
+              <Entypo name="star-outlined" size={20} color="white" />
             </View>
             <Text style={{ fontSize: 15, fontWeight: "500", marginLeft: 5 }}>
               3.2K Ratings
@@ -313,12 +310,8 @@ const hotel = () => {
           backgroundColor: "black",
         }}
       >
-        <Ionicons
-          style={{ textAlign: "center" }}
-          name="md-fast-food-outline"
-          size={24}
-          color="white"
-        />
+        <Ionicons  style={{ textAlign: "center"}} name="fast-food-outline" size={24} color="white" />
+       
         <Text
           style={{
             textAlign: "center",
@@ -369,15 +362,15 @@ const hotel = () => {
             </View>
           ))}
           <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <Image
+            {/* <Image
               style={{ width: 120, height: 70, resizeMode: "contain" }}
               source={{
                 uri: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_284/Logo_f5xzza",
               }}
-            />
+            /> */}
           </View>
         </View>
-      </Modal>
+      </Modal> 
 
       {cart?.length > 0 && (
         <Pressable

@@ -39,7 +39,7 @@ import {
       >
         <View style={{ marginTop: 50 }}>
           <Text style={{ fontSize: 20, textAlign: "center", fontWeight: "bold" }}>
-            Food App
+           Bz Food App
           </Text>
         </View>
   
