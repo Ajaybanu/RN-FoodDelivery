@@ -31,7 +31,7 @@ const hotel = () => {
           name: "Paneer 65",
           price: 275,
           description:
-            "This is served with Raita and gravy and has loaded with chilli paste mixed chicken Kebabs",
+            " This is  new served with Raita and gravy and has loaded with chilli paste mixed chicken Kebabs",
           rating: 4.1,
           ratings: 43,
           image:
